@@ -9,7 +9,6 @@ const FollowMouse = () => {
     console.log("effect", { enabled });
     const handleMove = (event) => {
       const { clientX, clientY } = event;
-      console.log("handleMove", { clientX, clientY });
       setPosition({ x: clientX, y: clientY });
     };
     if (enabled) {
@@ -17,7 +16,6 @@ const FollowMouse = () => {
     }
     //clean up
     return () => {
-      console.log("------> clean up");
       window.removeEventListener("pointermove", handleMove);
     };
   }, [enabled]);
